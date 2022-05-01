@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
 import 'package:portifolio/src/utils/screen_helper.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class Carousel extends StatelessWidget {
   const Carousel({Key? key}) : super(key: key);
@@ -47,6 +49,16 @@ class Carousel extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _launchInUrl(Uri url) async {
+    if (await canLaunchUrl(
+      url,
+    )) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
   Image imageProfile() {
@@ -100,7 +112,7 @@ class Carousel extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: Image.asset(
-                      "assets/images/linkedin.png",
+                      "assets/images/github.png",
                       height: 20,
                       color: Colors.pink,
                     ),
@@ -116,7 +128,11 @@ class Carousel extends StatelessWidget {
                 ],
               ),
               inkWell: true,
-              onTap: () {},
+              onTap: () {
+                _launchInUrl(
+                  Uri.parse("https://github.com/davigomesflorencio"),
+                );
+              },
               gradient: const LinearGradient(
                 colors: [Colors.purple, Colors.pink],
                 begin: Alignment.topCenter,
@@ -151,7 +167,10 @@ class Carousel extends StatelessWidget {
                 ],
               ),
               inkWell: true,
-              onTap: () {},
+              onTap: () {
+                _launchInUrl(
+                    Uri.parse("https://www.linkedin.com/in/davi-g-883b7a12a/"));
+              },
               gradient: const LinearGradient(
                 colors: [Colors.purple, Colors.pink],
                 begin: Alignment.topCenter,
