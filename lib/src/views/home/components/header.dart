@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hovering/hovering.dart';
 import 'package:portifolio/src/models/header_item.dart';
 import 'package:portifolio/src/utils/screen_helper.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -148,7 +149,9 @@ class HeaderRow extends StatelessWidget {
 }
 
 class Header extends StatelessWidget {
-  const Header({Key? key}) : super(key: key);
+  final _key = GlobalKey<ScaffoldState>();
+
+  Header({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -184,7 +187,7 @@ class Header extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
+        children: [
           HeaderLogo(),
           HeaderRow(),
         ],
