@@ -5,7 +5,6 @@ import 'package:outline_gradient_button/outline_gradient_button.dart';
 import 'package:portifolio/src/utils/screen_helper.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 class Carousel extends StatelessWidget {
   const Carousel({Key? key}) : super(key: key);

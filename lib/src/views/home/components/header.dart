@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/src/models/header_item.dart';
-import 'package:portifolio/src/utils/constants.dart';
 import 'package:portifolio/src/utils/screen_helper.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -9,6 +8,7 @@ List<HeaderItem> headerItems = [
   HeaderItem(
     title: "HOME",
     onTap: () {},
+    isButton: true,
   ),
   HeaderItem(
     title: "SOBRE MIM",
@@ -99,26 +99,28 @@ class HeaderRow extends StatelessWidget {
               (item) => item.isButton
                   ? MouseRegion(
                       cursor: SystemMouseCursors.click,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: kDangerColor,
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20.0,
-                          vertical: 5.0,
-                        ),
-                        child: TextButton(
-                          onPressed: item.onTap,
-                          child: Text(
-                            item.title,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 13.0,
-                              fontWeight: FontWeight.bold,
+                      child: Column(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 30.0,
+                              // vertical: 5.0,
+                            ),
+                            child: Text(
+                              item.title,
+                              style: const TextStyle(
+                                color: Colors.pink,
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
-                        ),
+                          Container(
+                            height: 4,
+                            width: 40,
+                            color: Colors.pink,
+                          ),
+                        ],
                       ),
                     )
                   : MouseRegion(

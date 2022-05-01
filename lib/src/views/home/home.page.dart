@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portifolio/src/views/components/carousel.dart';
-import 'package:portifolio/src/views/components/header.dart';
+import 'package:portifolio/src/views/home/components/carousel.dart';
+import 'package:portifolio/src/views/home/components/header.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
