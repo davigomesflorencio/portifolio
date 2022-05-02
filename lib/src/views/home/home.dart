@@ -6,8 +6,8 @@ import 'package:portifolio/src/utils/screen_helper.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Carousel extends StatelessWidget {
-  const Carousel({Key? key}) : super(key: key);
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
