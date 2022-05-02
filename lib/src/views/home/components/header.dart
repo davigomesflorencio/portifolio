@@ -118,8 +118,11 @@ class HeaderRow extends StatelessWidget {
                           ),
                           Container(
                             height: 4,
-                            width: 40,
-                            color: Colors.pink,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              color: Colors.pink,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                           ),
                         ],
                       ),
