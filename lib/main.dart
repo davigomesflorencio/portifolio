@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portifolio/src/utils/constants.dart';
-import 'package:portifolio/src/views/nav.page.dart';
+import 'package:portifolio/src/modules/main/nav.page.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
+
+import 'src/core/utils/constants.dart';
 
 void main() {
   runApp(const MyApp());
