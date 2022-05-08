@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portifolio/src/modules/main/nav.page.dart';
+import 'package:portifolio/src/routes/app.pages.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Xing Gomes - Dev Back End/Mobile',
       themeMode: ThemeMode.dark,
@@ -40,7 +41,8 @@ class MyApp extends StatelessWidget {
           color: kBackgroundColor,
         ),
       ),
-      home: const NavPage(),
+      initialRoute: '/',
+      getPages: AppPages.pages,
     );
   }
 }
