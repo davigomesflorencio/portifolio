@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:portifolio/src/modules/about/about.dart';
 import 'package:portifolio/src/modules/home/components/header.dart';
 import 'package:portifolio/src/modules/home/home.dart';
+import 'package:portifolio/src/modules/main/nav.controller.dart';
 
 class NavPage extends StatefulWidget {
   const NavPage({Key? key}) : super(key: key);
@@ -11,7 +13,7 @@ class NavPage extends StatefulWidget {
 }
 
 class _NavPageState extends State<NavPage> {
-  int widgetSelect = 1;
+  NavController navController = Get.find();
 
   List<Widget> listWidgets = const [
     Home(),
@@ -25,18 +27,20 @@ class _NavPageState extends State<NavPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Header(
-              selectHeaderItem: widgetSelect,
-            ),
-            listWidgets[widgetSelect],
-            const SizedBox(
-              height: 20.0,
-            ),
-          ],
-        ),
+        child: Obx(() {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Header(
+                selectHeaderItem: navController.widgetSelect.value,
+              ),
+              listWidgets[navController.widgetSelect.value],
+              const SizedBox(
+                height: 20.0,
+              ),
+            ],
+          );
+        }),
       ),
     );
   }
